@@ -37,10 +37,10 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 
 ## Dependencies
 
-- Docker
-- Docker Compose
 
-The mentioned dependencies can be installed using the official documentation [here](https://docs.docker.com/compose/install/).
+- Rancher (for container orchestration and management)
+
+You can install Rancher by following the [Rancher Quick Start Guide](https://ranchermanager.docs.rancher.com/pages-for-subheaders/quick-start-guide).
 
 ## Setup and Running the Application
 
@@ -64,26 +64,16 @@ git clone git@github.com:rtriska/net_be_genai_plgrnd.git
 
 ### Change Frontend
 
-In docker-compose.yml at the back-end application directory change the front-end directory to the current one:
 
-```sh
-  frontend:
-    build: ../angularjs_fe_genai_plgrnd <--- Here
-    depends_on:
-      - backend
-    ports:
-      - 3000:3000
-    restart: always
-    <<: *frontend-variables
-```
+If you are using Rancher, you can import your existing `docker-compose.yml` file into Rancher to create the necessary workloads. In the Rancher UI, go to your cluster, select "Deploy from Compose", and upload your compose file. Adjust the frontend service path as needed before importing.
 
-### Run Docker Compose
 
-Navigate to the back-end application directory and run:
+### Deploy with Rancher
 
-```sh
-docker compose up
-```
+1. Open the Rancher UI and navigate to your cluster.
+2. Use the "Deploy from Compose" option to import your `docker-compose.yml` file, or manually create workloads for the frontend and backend services using the Dockerfiles provided.
+3. Adjust environment variables, ports, and volumes as needed in the Rancher UI.
+4. Start the workloads and monitor their status from the Rancher dashboard.
 
 
 ## Further help
