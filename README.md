@@ -37,10 +37,13 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 
 ## Dependencies
 
-- Docker
-- Docker Compose
+- Rancher
 
-The mentioned dependencies can be installed using the official documentation [here](https://docs.docker.com/compose/install/).
+You can install Rancher Desktop by following the [Installation Guide](https://docs.rancherdesktop.io/getting-started/installation/#macos)
+
+Ensure to select "docker (moby)" for docker-compose compatibility
+
+In case of compatibility issues Administrative Access might be required: Rancher Desktop -> Preferences -> Application -> Administrative Access
 
 ## Setup and Running the Application
 
